@@ -1,0 +1,70 @@
+<div 
+    data-init="app.viewModels.wrongies.init"
+    data-role="view" 
+    id="view-all-wrongies" 
+    data-layout="default" 
+    class="activities-view" 
+    data-model="app.viewModels.wrongies">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a href="#drawer-menu" data-align="left" data-rel="drawer" data-role="button">Menu</a>
+            Wrongies
+        </div>
+    </header>
+
+    <ul id="select-filter" data-index="0">
+        <li>
+            ALL
+        </li>
+        <li>
+            HIM
+        </li>
+        <li>
+            HER
+        </li>
+    </ul>
+    <ul id="all-wrongies-listview"
+        data-style="inset"
+        data-role="listview"
+        data-template="wrongieTemplate"
+        data-bind="source: wrongies">
+    </ul>
+    <p id="no-activities-span" hidden="hidden" class="no-items-msg">
+        There are currently no wrongies...
+    </p>
+</div>
+
+<div data-role="drawer" id="drawer-menu">
+    <div data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title">Main menu</span>
+        </div>
+    </div>
+
+    <ul 
+        data-role="listview"
+        id="menu-view"
+        data-style="inset"
+        data-model="app.viewModels.wrongies">
+        <li>
+            <a data-role="button" data-icon="add" href="views/addWrongie.html">Add new</a>
+        </li>
+        <li>
+            <a data-role="button" data-icon="search" href="views/wrongiesView.html">Browse</a>
+        </li>
+        <li>
+            <a data-role="button" data-icon="about" href="views/about.html">About</a>
+        </li>
+        <li>
+            <a data-role="button" data-icon="history" href="/">Log out</a>
+        </li>
+    </ul>
+</div>
+
+<script type="text/x-kendo-template" id="wrongieTemplate">
+    <div data-role="touch" data-bind="events: { tap: wrongieSelected }">
+        <div class="user-share">
+            <a class="user-share-txt">${Content}</a>
+        </div>
+    </div>
+</script>

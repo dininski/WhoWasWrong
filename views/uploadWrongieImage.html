@@ -1,0 +1,25 @@
+<div data-role="view"
+    id="share" 
+    data-layout="default" 
+    data-transition="overlay:down" 
+    class="share-view"
+    data-init="app.viewModels.addWrongie.init">
+    <header data-role="header">
+        <div data-role="navbar">
+            Who was wrong?
+            <a class="nav-button" data-align="left" data-role="backbutton">Cancel</a>
+            <a class="nav-button" data-align="right" data-role="button" data-bind="click: saveWrongie">Post</a>
+        </div>
+    </header>
+    <div id="enterStatus" class="share-form-wrp">
+        <div class="user-info">
+            <img data-bind="attr:{src: me.get('data').PictureUrl}" alt="styles/images/avatar.png" />
+            <h2 data-bind="text: me.get('data').DisplayName">Me</h2>
+        </div>
+        <div class="user-share">
+            <textarea id="newWrongie" placeholder="Who was wrong??" required validationMessage="Content is required!"></textarea>
+            <div id="newCommentValidation" class="validation">Content is required!</div>
+            <div id="pictureUploadButton" data-role="touch" data-bind="events: { tap: addWrongieImage }" class="km-button">Upload image (optional)</div>
+        </div>
+    </div>
+</div>

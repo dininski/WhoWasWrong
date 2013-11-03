@@ -1,0 +1,24 @@
+<div data-role="view"
+     id="single-activity" 
+     data-layout="default" 
+     class="activities-view"
+     data-transition="overlay:down"
+     data-show="app.viewModels.wrongie.show">
+    <header data-role="header">
+        <div data-role="navbar">
+            Wrongie
+            <a class="nav-button" data-align="left" data-role="backbutton">Back</a>
+        </div>
+    </header>
+
+    <div id="status-container" data-role="listview" data-style="inset">
+        <div class="user-info">
+            <h2>Created by: <span data-bind="text: DisplayName"></span></h2>
+            <time id="activityDate" data-bind="text: CreatedAtFormatted"></time>
+        </div>
+        <div class="user-share">
+            <span id="activityText" data-bind="text: Content" class="user-share-txt"></span>
+        </div>
+    </div>
+    <img id="picture" data-bind="attr: {src: ImageLocation()}, visible: ImageLocation()"  width="100%"/>
+</div>
